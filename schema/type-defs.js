@@ -1,6 +1,3 @@
-import { ApolloServer } from '@apollo/server';
-import { ExecutableDefinitionsRule } from 'graphql';
-
 
 const typeDefs = `#graphql
     type User{
@@ -10,9 +7,13 @@ const typeDefs = `#graphql
         age:Int!
         nationality:Nationality!
         friends:[User]
+        favoriteMovies:[Movie!]
     }
-    type Query {
-        users:[User!]!
+    type Movie{
+        id:ID!
+        name:String!
+        yearOfPublication:Int!
+        isInTheaters:Boolean!  
     }
     enum Nationality{
         CANADA
@@ -21,6 +22,15 @@ const typeDefs = `#graphql
         GERMANY
         CHILE
     }
+    type Query {
+        users:[User!]!
+        user(id:ID!):User
+        movies:[Movie!]!
+        movie(name:String!):Movie!
+    }
+    
+    
+    
 
 `
 export default typeDefs
