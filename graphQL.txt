@@ -31,5 +31,6 @@ A GraphQL schema consists of the following components:
 	5	Subscriptions: Subscriptions allow clients to receive real-time updates from the server. They define the events that clients can subscribe to and specify the data that should be pushed to the client when the event occurs.
 	6	Input Types: Input types are used to pass complex input data to mutations or queries. They are similar to object types but are used only for input purposes.
 
+In GraphQL and Apollo Server, an enum   allows you to define a specific set of allowed values for a field or an argument
 
 
