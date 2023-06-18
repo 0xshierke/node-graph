@@ -15,22 +15,37 @@ const typeDefs = `#graphql
         yearOfPublication:Int!
         isInTheaters:Boolean!  
     }
-    enum Nationality{
-        CANADA
-        BRAZIL
-        INDIA
-        GERMANY
-        CHILE
-    }
     type Query {
         users:[User!]!
         user(id:ID!):User
         movies:[Movie!]!
         movie(name:String!):Movie!
     }
-    
-    
-    
+    input CreatUserInput {
+        name:String!
+        username:String!
+        age:Int!
+        nationality:Nationality  = BRAZIL
+    }
+    input UpdateUserName {
+        id:ID!
+        newUsername:String!
+    }
+    input DeleteUser {
+        id:ID!
+    }
+    type Mutation{
+        createUser(input:CreatUserInput!):User!
+        updateUserName(input:UpdateUserName):User!
+        deleteUser(input:DeleteUser):User!
+    }  
+    enum Nationality{
+        CANADA
+        BRAZIL
+        INDIA
+        GERMANY
+        CHILE
+    } 
 
 `
 export default typeDefs
