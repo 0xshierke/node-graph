@@ -1,0 +1,35 @@
+GRAPH QL - its a query language 
+Queries an api 
+Queries and mutations 
+Get - queries
+Put ,post ,delete, post - mutations
+Difference between REST aPI and graph QL
+REST.               GRPAHQL
+                          
+/users                  /graphQL            
+/followers
+/post
+/subscribers
+
+Single end point
+
+Overmatching and under fetching 
+
+	1	Overfetching:
+	2	Overfetching occurs when a REST API returns more data than is needed for a specific use case. With REST, the server defines fixed endpoints, and the client has limited control over the shape and size of the data returned. This can lead to inefficiency, increased bandwidth usage, and slower performance.
+In GraphQL, the client specifies exactly what data it needs by sending a query with specific fields and nested relationships. The server responds with only the requested data, eliminating overfetching. Clients can fetch multiple resources and related data in a single request, reducing the number of network round trips.
+	2	Underfetching:
+	3	Underfetching occurs when a REST API does not provide enough data in a single request, forcing clients to make multiple requests to retrieve all the required information. This can result in a high number of round trips and increased latency, especially for complex or nested data structures.
+GraphQL solves underfetching by allowing clients to define the structure of the response they need, including nested relationships. Clients can request related data in a single GraphQL query, and the server resolves and returns all the requested data in one response. This minimizes the need for multiple round trips and reduces the overall latency.
+
+A GraphQL schema defines the structure and capabilities of a GraphQL API
+A GraphQL schema consists of the following components:
+	1	Object Types: These represent the entities in your data model, such as "User", "Post", "Comment", etc. Each object type has fields that define the data that can be queried and returned.
+	2	Fields: Fields are properties on object types that represent a piece of data. They can have different types like scalars (e.g., String, Int, Boolean) or other object types.
+	3	Queries: Queries define the operations that clients can perform to fetch data. The "query" type in the schema represents the entry point for fetching data. It consists of fields that return data and can have arguments to customize the query.
+	4	Mutations: Mutations define the operations that modify data on the server. They are similar to queries but are used for creating, updating, or deleting data. The "mutation" type in the schema represents the entry point for performing mutations.
+	5	Subscriptions: Subscriptions allow clients to receive real-time updates from the server. They define the events that clients can subscribe to and specify the data that should be pushed to the client when the event occurs.
+	6	Input Types: Input types are used to pass complex input data to mutations or queries. They are similar to object types but are used only for input purposes.
+
+
+
