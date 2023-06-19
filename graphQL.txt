@@ -13,7 +13,7 @@ REST.               GRPAHQL
 
 Single end point
 
-Overmatching and under fetching 
+Overfetching and under fetching 
 
 	1	Overfetching:
 	2	Overfetching occurs when a REST API returns more data than is needed for a specific use case. With REST, the server defines fixed endpoints, and the client has limited control over the shape and size of the data returned. This can lead to inefficiency, increased bandwidth usage, and slower performance.

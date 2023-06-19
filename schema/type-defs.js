@@ -16,7 +16,7 @@ const typeDefs = `#graphql
         isInTheaters:Boolean!  
     }
     type Query {
-        users:[User!]!
+        users:UsersResult
         user(id:ID!):User
         movies:[Movie!]!
         movie(name:String!):Movie!
@@ -46,6 +46,14 @@ const typeDefs = `#graphql
         GERMANY
         CHILE
     } 
+    type UserSuccessResult {
+        users:[User!]!
+    }
+    type UserErrorResult {
+        message:String!
+    }
+
+    union UsersResult = UserSuccessResult | UserErrorResult
 
 `
 export default typeDefs

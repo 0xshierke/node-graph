@@ -4,7 +4,8 @@ const resolvers = {
     Query: {
         // USERS RESOLVERS
         users() {
-            return UserList
+            if(UserList) return {users : UserList};
+            return {message : "yo theres a error"} 
         },
         // USER RESOLVER
         user(parent, args) {
@@ -55,9 +56,20 @@ const resolvers = {
         },
         deleteUser(parent,args){
             console.log(args.input)
+            console.log(parent)
             return _.remove(UserList,(val)=>val.id==args.input.id)
 
         }
+    },
+    //Resolver for handling Error
+    UsersResult:{
+        __resolveType(obj){
+            if(obj.users){return "UserSuccessResult"}
+            if(obj.message){return "UserErrorResult"}
+            return null
+            
+        }
+
     }
 }
 export default resolvers
